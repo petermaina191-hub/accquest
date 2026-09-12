@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Login — Accquest Training Institute</title>
+<meta name="description" content="Student and staff portal login for Accquest Training Institute.">
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="portal-shell">
+  <div class="portal-card">
+    <div class="portal-logo">
+      <img src="images/logo.svg" alt="Accquest Training Institute badge">
+      <div>
+        <div style="font-family:var(--font-display); font-weight:600;">Accquest Portal</div>
+        <div style="font-size:0.78rem; color:var(--ink-soft);">Student &amp; staff sign-in</div>
+      </div>
+    </div>
+
+    <div class="role-toggle">
+      <button type="button" class="active" data-role="student">Student</button>
+      <button type="button" data-role="staff">Staff / Trainer</button>
+    </div>
+
+    <div class="demo-flag">
+      Demo mode: this login does not check a real password yet. Any entry takes you to the illustrative dashboard. Connect it to your student information system before launch.
+    </div>
+
+    <form id="portalLoginForm" data-validate novalidate>
+      <div class="field">
+        <label id="portalIdLabel" for="portalId">Admission / student number</label>
+        <input type="text" id="portalId" name="portalId" required>
+        <span class="error-text">Please enter your ID number.</span>
+      </div>
+      <div class="field">
+        <label for="portalPass">Password</label>
+        <input type="password" id="portalPass" name="portalPass" required>
+        <span class="error-text">Please enter your password.</span>
+      </div>
+      <div class="field" style="display:flex; align-items:center; justify-content:space-between; gap:10px;">
+        <label style="display:flex; align-items:center; gap:8px; font-weight:400;">
+          <input type="checkbox" name="remember" style="width:auto;"> Remember me
+        </label>
+        <a href="#" style="font-size:0.85rem;">Forgot password?</a>
+      </div>
+      <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+    </form>
+
+    <p class="portal-foot">Not registered yet? <a href="admissions.html">Apply for admission</a> to get your student number.</p>
+    <p class="portal-foot"><a href="index.html">← Back to main site</a></p>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

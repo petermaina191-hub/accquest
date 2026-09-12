@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dashboard (Demo) — Accquest Training Institute</title>
+<link rel="icon" href="images/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="dash-shell">
+
+  <aside class="dash-side">
+    <div class="footer-brand" style="margin-bottom:0;">
+      <img src="images/logo.svg" alt="Accquest Training Institute badge" style="width:36px;">
+      <div class="brand-text">
+        <span class="name">Accquest</span>
+        <span class="tag" style="color:var(--brass);">Learner Portal</span>
+      </div>
+    </div>
+    <nav class="dash-nav">
+      <a href="#" class="active">📊 Overview</a>
+      <a href="#">📚 My course</a>
+      <a href="#">🗓 Timetable</a>
+      <a href="#">💳 Fees</a>
+      <a href="#">📄 Documents</a>
+      <a href="#">🔔 Notices</a>
+      <a href="#">⚙️ Profile settings</a>
+      <a href="portal.html" style="margin-top:20px; border-top:1px solid rgba(255,255,255,0.15); padding-top:16px;">↩ Sign out</a>
+    </nav>
+  </aside>
+
+  <div class="dash-main">
+    <div class="dash-top">
+      <div>
+        <h2 style="margin-bottom:2px;">Welcome back, <span id="learnerName">Learner</span></h2>
+        <p class="muted" style="margin:0;">Baking Technology — Level 3 Artisan (CDACC) · 2026 intake</p>
+      </div>
+      <a href="index.html" class="btn btn-ghost btn-sm">View public site</a>
+    </div>
+
+    <div class="demo-flag">
+      This dashboard shows illustrative sample data for design purposes only — it is not connected to a real student records system yet. Wire it up to your backend (attendance, fees, timetable APIs) before use.
+    </div>
+
+    <div class="dash-kpis">
+      <div class="kpi"><b>72%</b><span>Course progress</span></div>
+      <div class="kpi"><b>Ksh 8,500</b><span>Fee balance due</span></div>
+      <div class="kpi"><b>4</b><span>Units this term</span></div>
+      <div class="kpi"><b>2</b><span>Unread notices</span></div>
+    </div>
+
+    <div class="grid grid-2" style="align-items:start;">
+      <div class="card">
+        <h3>Timetable — this week</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Day</th><th>Time</th><th>Unit</th></tr></thead>
+            <tbody>
+              <tr><td>Monday</td><td>8:00 – 10:00</td><td>Bakery Practicals I</td></tr>
+              <tr><td>Tuesday</td><td>10:00 – 12:00</td><td>Food Hygiene &amp; Safety</td></tr>
+              <tr><td>Wednesday</td><td>8:00 – 10:00</td><td>Bakery Practicals II</td></tr>
+              <tr><td>Friday</td><td>2:00 – 4:00</td><td>Entrepreneurship Basics</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Fee statement</h3>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Item</th><th>Amount</th><th>Status</th></tr></thead>
+            <tbody>
+              <tr><td>Term 1 tuition</td><td>Ksh 18,000</td><td><span class="pill-status paid">Paid</span></td></tr>
+              <tr><td>Hostel fee</td><td>Ksh 6,000</td><td><span class="pill-status paid">Paid</span></td></tr>
+              <tr><td>Practical materials</td><td>Ksh 8,500</td><td><span class="pill-status due">Due</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:26px;">
+      <h3>Notices</h3>
+      <ul style="list-style:disc; padding-left:20px; color:var(--ink-soft);">
+        <li><strong>Sample:</strong> Mid-term practical assessment scheduled — check timetable.</li>
+        <li><strong>Sample:</strong> Fee balance clearance deadline approaching.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script src="js/main.js"></script>
+<script>
+  // DEMO: read ?role= from the login redirect just to tweak the label. Replace with real session data.
+  const params = new URLSearchParams(window.location.search);
+  const role = params.get("role");
+  if (role === "staff") {
+    document.getElementById("learnerName").textContent = "Trainer";
+    document.querySelector(".dash-side .tag").textContent = "Staff Portal";
+  }
+</script>
+</body>
+</html>
